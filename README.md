@@ -1,4 +1,4 @@
-RF905-Py: RF905 for RaspberryPi
+RF905-Py: RF905 for Raspberry Pi
 
 Powered by SPI-Py
 
@@ -11,7 +11,7 @@ step:
 	 sudo easy_install RPi.GPIO
 	 
 	 
-2 try to get SPI working on the Raspi the easy way
+2 try to get SPI working on the RaspberryPi the easy way
 
    sudo modprobe spi_bcm2708
    
