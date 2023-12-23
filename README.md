@@ -1,27 +1,36 @@
-RF905-Py: RF905 for Raspberry Pi
+RF905_Py
+This project provides a Python library for interfacing with RF905 wireless transceiver modules.
 
-Powered by SPI-Py
+Features
+Initialize and configure RF905 modules using SPI communication
+Set frequency, output power, baud rate, and other parameters
+Send and receive data packets over the air
+Packet handling with checksum validation
+Built-in support for Arduino and Raspberry Pi
 
-step:
-1 install GPIO for python
+Usage
+Import the rf905 module:
+import rf905
 
-   sudo apt-get install python-setuptools
-	 sudo easy_install -U distributesudo 
-	 apt-get install python-dev
-	 sudo easy_install RPi.GPIO
-	 
-	 
-2 try to get SPI working on the RaspberryPi the easy way
+Create an RF905 instance:
+rf = rf905.RF905(spi_bus, spi_dev)
 
-   sudo modprobe spi_bcm2708
-   
-3 install SPI-Py
-   python setup.py build
-   python setup.py install
-   
-4 call RF905-Py in main.py
+Configure parameters:
+rf.set_frequency(433)
+rf.set_power(10)
 
+Send data packet:
+packet = b"Hello World"
+rf.send(packet)
 
+Receive data packet:
+packet = rf.recv() 
+print(packet)
 
+Hardware Compatibility
+Arduino with SPI interface
+Raspberry Pi SPI pins
 
-lqiao@hackeen.com
+Installation
+pip install rf905
+
